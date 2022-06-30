@@ -1,7 +1,7 @@
 import { styled } from "./../stitches.config";
+import { motion } from "framer-motion";
 import { gql, useQuery } from "@apollo/client";
 import { client } from "lib/apollo";
-import { useEffect } from "react";
 import { Header } from "root/components/Header";
 import { Button } from "./components/Button";
 
@@ -29,12 +29,36 @@ const Main = styled("main", {
   backgroundColor: "$gray900",
 });
 
+const Title = styled(motion.h1, {
+  color: "$red500",
+  fontSize: "$6",
+  fontWeight: "bold",
+});
+
 function App() {
   const { data } = useQuery(GET_LESSONS_QUERY);
   return (
     <Container>
       <Header />
-      <Main />
+      <Main>
+        <Title
+          initial={{
+            opacity: 0,
+            scale: 0,
+            y: 1000,
+          }}
+          animate={{
+            y: 0,
+            scale: 1,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          In development
+        </Title>
+      </Main>
     </Container>
   );
 }
