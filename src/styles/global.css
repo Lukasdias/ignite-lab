@@ -1,0 +1,16 @@
+html,
+body {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body * {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  line-height: 160%;
+}
