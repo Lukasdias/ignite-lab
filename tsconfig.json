@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -17,18 +18,19 @@
     "jsx": "react-jsx",
     "types": ["node"],
     "paths": {
-      "@/*": ["./*"],
-      "root/*": ["./src/*"],
-      "assets/*": ["./src/assets/*"],
-      "styles/*": ["./src/styles/*"],
-      "hooks/*": ["./src/hooks/*"],
-      "models/*": ["./src/styles/*"],
-      "pages/*": ["./src/pages/*"],
-      "services/*": ["./src/services/*"],
-      "utils/*": ["./src/utils/*"],
-      "lib/*": ["./src/lib/*"]
+      "src/*": ["src/*"],
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "libs/*": ["src/libs/*"],
+      "models/*": ["src/models/*"],
+      "pages/*": ["src/pages/*"],
+      "services/*": ["src/services/*"],
+      "styles/*": ["src/styles/*"],
+      "utils/*": ["src/utils/*"],
+      "lib/*": ["src/lib/*"]
     }
   },
-  "include": ["src", "/"],
+  "include": ["src", "./src/custom.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

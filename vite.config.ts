@@ -2,14 +2,14 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { imagetools } from "vite-imagetools";
 import viteImagemin from "vite-plugin-imagemin";
-// https://vitejs.dev/config/
+import svgr from "@honkhonk/vite-plugin-svgr";
+import viteCompression from "vite-plugin-compression";
+
 export default defineConfig({
   base: "",
   resolve: {
     alias: [
-      { find: "@", replacement: "/" },
-      { find: "root", replacement: "/src" },
-      { find: "assets", replacement: "/src/assets" },
+      { find: "assets", replacement: "/src/assets/" },
       { find: "components", replacement: "/src/components/" },
       { find: "hooks", replacement: "/src/hooks/" },
       { find: "lib", replacement: "/src/lib" },
@@ -22,7 +22,9 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    svgr(),
     imagetools(),
+    viteCompression(),
     viteImagemin({
       gifsicle: {
         optimizationLevel: 7,

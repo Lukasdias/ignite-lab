@@ -2,7 +2,7 @@ import { styled } from "./../stitches.config";
 import { motion } from "framer-motion";
 import { gql, useQuery } from "@apollo/client";
 import { client } from "lib/apollo";
-import { Header } from "root/components/Header";
+import { Header } from "./components/Header";
 import { Button } from "./components/Button";
 
 const GET_LESSONS_QUERY = gql`
