@@ -1,6 +1,6 @@
 import { styled } from "./../../stitches.config";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import Logo from "./../../public/ignite-lab-logo.svg";
+import Logo from "assets/ignite-lab-logo.svg";
 
 const Container = styled("header", {
   backgroundColor: "$gray700",

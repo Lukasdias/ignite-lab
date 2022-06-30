@@ -19,6 +19,7 @@
     "paths": {
       "@/*": ["./*"],
       "root/*": ["./src/*"],
+      "assets/*": ["./src/assets/*"],
       "styles/*": ["./src/styles/*"],
       "hooks/*": ["./src/hooks/*"],
       "models/*": ["./src/styles/*"],
