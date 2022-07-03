@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo, ReactPortal } from "react";
 import { styled } from "../../../stitches.config";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { gql, useQuery } from "@apollo/client";
 import Lesson from "./Lesson";
+import useSidebar from "hooks/useSidebar";
 
 const Box = styled("div", {});
 
@@ -45,10 +46,33 @@ interface GetLessonsResponse {
   }[];
 }
 
+const SidebarVariants: Variants = {
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+    },
+  },
+  closed: {
+    x: window.innerWidth > 520 ? 0 : "-100%",
+    opacity: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
 export const Sidebar: React.FC = () => {
   const { data } = useQuery<GetLessonsResponse>(GET_LESSONS_QUERY);
+  const { isOpen } = useSidebar();
+
   return (
-    <Container>
+    <Container
+      initial={"closed"}
+      animate={isOpen ? "open" : "closed"}
+      variants={SidebarVariants}
+    >
       <Box
         as="h1"
         css={{

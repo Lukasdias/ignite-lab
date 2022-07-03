@@ -1,6 +1,7 @@
 import { styled } from "./../../stitches.config";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Logo from "assets/ignite-lab-logo.svg";
+import useSidebar from "hooks/useSidebar";
 
 const Container = styled("header", {
   backgroundColor: "$gray700",
@@ -39,12 +40,13 @@ const MenuIcon = styled(HamburgerMenuIcon, {
 });
 
 export const Header: React.FC = () => {
+  const { toggle } = useSidebar();
   return (
     <Container>
       <img src={Logo} alt="Ignite Lab Logo" />
       <Menu>
         <span>Aulas</span>
-        <MenuIcon />
+        <MenuIcon onClick={toggle} />
       </Menu>
     </Container>
   );
