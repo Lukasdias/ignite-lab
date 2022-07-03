@@ -27,14 +27,14 @@ export default defineConfig({
     viteCompression(),
     viteImagemin({
       gifsicle: {
-        optimizationLevel: 7,
+        optimizationLevel: 3,
         interlaced: false,
       },
       optipng: {
-        optimizationLevel: 7,
+        optimizationLevel: 3,
       },
       mozjpeg: {
-        quality: 20,
+        quality: 100,
       },
       pngquant: {
         quality: [0.8, 0.9],

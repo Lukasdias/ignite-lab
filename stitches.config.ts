@@ -19,7 +19,7 @@ export const {
       green500: "#00875F",
       green700: "#015F43",
       blue500: "#81D8F7",
-      orange500: "#FBA94C",
+      yellow500: "#FBA94C",
       red500: "#F75A68",
       gray100: "#E1E1E6",
       gray200: "#C4C4CC",
