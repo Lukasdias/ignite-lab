@@ -1,5 +1,5 @@
 import { styled } from "./../../stitches.config";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
 import Logo from "assets/ignite-lab-logo.svg";
 import useSidebar from "hooks/useSidebar";
 
@@ -39,14 +39,37 @@ const MenuIcon = styled(HamburgerMenuIcon, {
   },
 });
 
+const CloseMenuIcon = styled(Cross1Icon, {
+  color: "$blue500",
+  size: "$5",
+  cursor: "pointer",
+  transition: "all 300ms",
+  "&:hover": {
+    opacity: "0.3",
+  },
+});
+
+const HeaderLogo = styled("img", {
+  width: 162,
+  height: 30,
+  "@bp1": {
+    width: 262,
+    height: 33,
+  },
+});
+
 export const Header: React.FC = () => {
-  const { toggle } = useSidebar();
+  const { toggle, isOpen } = useSidebar();
   return (
     <Container>
-      <img src={Logo} alt="Ignite Lab Logo" />
+      <HeaderLogo src={Logo} alt="Ignite Lab Logo" />
       <Menu>
         <span>Aulas</span>
-        <MenuIcon onClick={toggle} />
+        {isOpen ? (
+          <CloseMenuIcon onClick={toggle} />
+        ) : (
+          <MenuIcon onClick={toggle} />
+        )}
       </Menu>
     </Container>
   );
