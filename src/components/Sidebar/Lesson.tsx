@@ -160,7 +160,6 @@ const Lesson: React.FC<LessonProps> = ({ ...props }) => {
         <span>{availableDateFormatted}</span>
       </Date>
       <Card
-        variant={isActive && "selected"}
         css={
           !isLessonAvailable && {
             cursor: "not-allowed",
@@ -203,7 +202,7 @@ const Lesson: React.FC<LessonProps> = ({ ...props }) => {
             </Box>
           </Box>
           <Box>
-            <LessonType variant={isActive && "selected"}>
+            <LessonType>
               {type === "live" ? "AO VIVO" : "AULA PRÁTICA"}
             </LessonType>
           </Box>

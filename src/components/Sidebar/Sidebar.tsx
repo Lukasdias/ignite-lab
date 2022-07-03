@@ -74,7 +74,6 @@ export const Sidebar: React.FC = () => {
       variants={SidebarVariants}
     >
       <Box
-        as="h1"
         css={{
           fontSize: 24,
           color: "white",
@@ -100,7 +99,6 @@ export const Sidebar: React.FC = () => {
             title={lesson.title}
             key={lesson.id}
             // isActive={idx === 0}
-            isLessonAvailable={true}
             type={lesson.lessonType}
           />
         ))}
